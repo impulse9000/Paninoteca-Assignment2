@@ -7,4 +7,5 @@ cache:
   directories:
     - $HOME/.m2
 script:
+  - cd sandwich-shop-manager
   - mvn clean install
