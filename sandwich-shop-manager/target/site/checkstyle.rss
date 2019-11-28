@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2019</copyright>
     <item>
-      <title>File: 1,
+      <title>File: 5,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -46,7 +46,63 @@ under the License.
           <tbody>
                           <tr>
                 <td>
+                  <a href="http://www.example.com/checkstyle.html#it.unipd.tos.business.exception.TakeAwayBillException.java">it/unipd/tos/business/exception/TakeAwayBillException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.example.com/checkstyle.html#it.unipd.tos.business.TakeAwayBill.java">it/unipd/tos/business/TakeAwayBill.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.example.com/checkstyle.html#it.unipd.tos.model.MenuItem.java">it/unipd/tos/model/MenuItem.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="http://www.example.com/checkstyle.html#it.unipd.tos.App.java">it/unipd/tos/App.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://www.example.com/checkstyle.html#it.unipd.tos.business.TakeAwayBillImpl.java">it/unipd/tos/business/TakeAwayBillImpl.java</a>
                 </td>
                 <td>
                   0

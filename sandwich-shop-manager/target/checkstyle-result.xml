@@ -2,4 +2,12 @@
 <checkstyle version="6.11.2">
 <file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\App.java">
 </file>
+<file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\business\exception\TakeAwayBillException.java">
+</file>
+<file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\business\TakeAwayBill.java">
+</file>
+<file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\business\TakeAwayBillImpl.java">
+</file>
+<file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\model\MenuItem.java">
+</file>
 </checkstyle>

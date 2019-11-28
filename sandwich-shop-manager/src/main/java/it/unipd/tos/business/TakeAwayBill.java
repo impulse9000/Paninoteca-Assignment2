@@ -2,24 +2,15 @@
 // [Andrea] [Polo-Perucchin] [1169765]
 ////////////////////////////////////////////////////////////////////
 
-package it.unipd.tos;
-
+package it.unipd.tos.business;
 
 import java.util.List;
 
-import it.unipd.tos.business.TakeAwayBillImpl;
 import it.unipd.tos.business.exception.TakeAwayBillException;
+import it.unipd.tos.model.MenuItem;
 
+public interface TakeAwayBill {
+	
+	double getOrderPrice(List<MenuItem> itemsOrdered) throws TakeAwayBillException;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ) throws TakeAwayBillException
-    {
-        System.out.println( "Hello World!" );
-        
-    }
 }
