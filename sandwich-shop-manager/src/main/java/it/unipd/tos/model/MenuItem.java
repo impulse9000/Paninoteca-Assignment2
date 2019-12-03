@@ -29,4 +29,8 @@ public class MenuItem {
 		
 	}
 	
+	public itemType getItemType(){
+		return type;
+	}
+	
 }
