@@ -18,16 +18,20 @@ public class TakeAwayBillImpl implements TakeAwayBill {
 	@Override
 	public double getOrderPrice(List<MenuItem> itemsOrdered)
 			throws TakeAwayBillException{	
-		double finalPrice = 0;
-		ListIterator<MenuItem> items = itemsOrdered.listIterator();
-		while (items.hasNext()) {
-			finalPrice += items.next().getPrice();
+		if (isValidOrder(itemsOrdered)==true) {
+			double finalPrice = 0;
+			ListIterator<MenuItem> items = itemsOrdered.listIterator();
+			while (items.hasNext()) {
+				finalPrice += items.next().getPrice();
+			}
+			return finalPrice-totalDiscounts(itemsOrdered, finalPrice);
 		}
-		return finalPrice-totalDiscounts(itemsOrdered, finalPrice);
-		
+		else 
+			throw new TakeAwayBillException("ATTENZIONE! L'ordine non può essere composto da più di 30 articoli.");
 	}
 	
-	// 50% di sconto sul panino meno caro se acquistati più di 5, ritorna il risparmio in euro oppure 0 se non applicabile
+	// 50% di sconto sul panino meno caro se acquistati più di 5
+	// ritorna il risparmio in euro oppure 0 se non applicabile
 	public double get50Discount(List<MenuItem> itemsOrdered) {
 		if (itemsOrdered.size()>5) {
 			int count = 0;
@@ -49,7 +53,7 @@ public class TakeAwayBillImpl implements TakeAwayBill {
 	}
 	
 	// 10% di sconto se il totale dell'ordine supera i 50 euro (contando solo panini e fritti)
-	// ritorna  risparmio in euro oppure 0 se non applicabile
+	// ritorna risparmio in euro oppure 0 se non applicabile
 	
 	public double get10Discount(List<MenuItem> itemsOrdered, double totalOrderPrice) {
 		if (totalOrderPrice>50) {
@@ -69,13 +73,21 @@ public class TakeAwayBillImpl implements TakeAwayBill {
 		return 0;
 	}
 	
-	
+	// ritorna lo sconto totale dopo aver analizzato tutti i possibili sconti
 	public double totalDiscounts(List<MenuItem> itemsOrdered, double totalOrderPrice) {
 		double totDisc = 0;
 		totDisc+=get50Discount(itemsOrdered);
 		totDisc+=get10Discount(itemsOrdered, totalOrderPrice);
 		return totDisc;
 		
+	}
+	
+	// true se ordine si componde di AL PIU' 30 articoli, false altrimenti
+	public boolean isValidOrder(List<MenuItem> itemsOrdered) {
+		if (itemsOrdered.size()>30)
+			return false;
+		else
+			return true;
 	}
 	
 

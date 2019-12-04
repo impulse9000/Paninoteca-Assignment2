@@ -5,9 +5,6 @@
 package it.unipd.tos;
 
 
-import java.util.List;
-
-import it.unipd.tos.business.TakeAwayBillImpl;
 import it.unipd.tos.business.exception.TakeAwayBillException;
 
 
