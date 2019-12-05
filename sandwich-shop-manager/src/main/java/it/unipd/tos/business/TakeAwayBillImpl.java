@@ -24,6 +24,8 @@ public class TakeAwayBillImpl implements TakeAwayBill {
 			while (items.hasNext()) {
 				finalPrice += items.next().getPrice();
 			}
+			//la commissione di 0.50 viene applicata se l'ordine è inferiore ai 10 euro, prima di calcolare eventuali sconti
+			finalPrice+=checkForCommission(finalPrice); 
 			return finalPrice-totalDiscounts(itemsOrdered, finalPrice);
 		}
 		else 
@@ -88,6 +90,14 @@ public class TakeAwayBillImpl implements TakeAwayBill {
 			return false;
 		else
 			return true;
+	}
+	
+	public double checkForCommission(double totalOrderPrice) {
+		if (totalOrderPrice<10)
+			return 0.50;
+		else
+			return 0.00;
+		
 	}
 	
 

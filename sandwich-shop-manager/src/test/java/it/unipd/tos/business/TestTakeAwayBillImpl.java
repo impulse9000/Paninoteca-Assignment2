@@ -20,7 +20,7 @@ import it.unipd.tos.model.MenuItem.itemType;
 public class TestTakeAwayBillImpl {
 	
 	MenuItem m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11;
-	List<MenuItem> lMista, lPanini, lPaniniFritti, l31Articoli;
+	List<MenuItem> lMista, lPanini, lPaniniFritti, l31Articoli, lSotto10Euro;
 	TakeAwayBillImpl bill; 
 	
 	@Before
@@ -29,6 +29,7 @@ public class TestTakeAwayBillImpl {
 		lPanini = new ArrayList<MenuItem>(); //lista con ALMENO 5 panini, totale(fritti+panini)<=50 euro
 		lPaniniFritti = new ArrayList<MenuItem>(); // lista con AL PIU' 5 panini, totale(fritti+panini)>50 euro
 		l31Articoli = new ArrayList<MenuItem>(); //lista con più di 30 articoli
+		lSotto10Euro = new ArrayList<MenuItem>(); //lista con prezzo totale<10 euro
 		bill = new TakeAwayBillImpl();
 		
 		m1 = new MenuItem(itemType.BEVANDA, "coca-cola", 2.0);
@@ -45,6 +46,7 @@ public class TestTakeAwayBillImpl {
 		Collections.addAll(lMista, m1,m2,m11);
 		Collections.addAll(lPanini, m3,m4,m5,m6,m7,m8);
 		Collections.addAll(lPaniniFritti, m1,m2,m3,m9,m10,m11);
+		Collections.addAll(lSotto10Euro, m1,m2);
 		for (int i=0; i<31; i++) {
 			MenuItem el = new MenuItem(itemType.FRITTO, "cosa buona", 4.0);
 			Collections.addAll(l31Articoli, el);
@@ -70,6 +72,13 @@ public class TestTakeAwayBillImpl {
 		double expectedPricePaniniFritti = 61.5-61.5*0.10; //totale con sconto 10% sul totale(fritto+panino)>50
 		double actualPricePaniniFritti = bill.getOrderPrice(lPaniniFritti);
 		assertEquals(expectedPricePaniniFritti, actualPricePaniniFritti, 0.00);
+	}
+	
+	@Test
+	public void testOrderPrice_totalLessThan10Euro_commissionAdded() throws TakeAwayBillException {
+		double expectedPriceSotto10Euro = 6.50+0.50; //totale con 0.50cent di commissione perchè totale<10 euro
+		double actualPriceSotto10Euro = bill.getOrderPrice(lSotto10Euro);
+		assertEquals(expectedPriceSotto10Euro, actualPriceSotto10Euro, 0.00);
 	}
 	
 	@Rule
@@ -128,14 +137,24 @@ public class TestTakeAwayBillImpl {
 	
 	@Test
 	public void testIsValidOrder_itemsLessThan30_returnTrue(){
-		assertEquals(bill.isValidOrder(lMista),true);
+		assertEquals(true, bill.isValidOrder(lMista));
 		
 	}
 	
 	@Test
-	public void testIsValidOrder_itemsGreaterThan30_returnFalse() {
-		assertEquals(bill.isValidOrder(l31Articoli),false);
+	public void testIsValidOrder_itemsGreaterThan30_returnFalse(){
+		assertEquals(false, bill.isValidOrder(l31Articoli));
 	}
 	
+	@Test
+	public void testCheckForCommission_totalGreaterOrEqualTo10Euro_return0Commission(){
+		assertEquals(0.00,bill.checkForCommission(10),0.00);
+		assertEquals(0.00,bill.checkForCommission(25),0.00);
+	}
+	
+	@Test
+	public void testCheckForCommission_totalLessThan10Euro_return50CentCommission(){
+		assertEquals(0.50,bill.checkForCommission(9.50),0.00);
+	}
 
 }
