@@ -5,7 +5,6 @@
 package it.unipd.tos.business;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
