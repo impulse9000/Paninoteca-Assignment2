@@ -2,8 +2,22 @@
 <!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
 "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 <module name="Checker">
+ <module name="TreeWalker">
+    <module name="BooleanExpressionComplexity"/>
+    <module name="CyclomaticComplexity"/>
+    <module name="LineLength">
+      <property name="max" value="130"/>
+    </module>
+    <module name="MethodLength"/>
+    <module name="EmptyCatchBlock"/>
+    <module name="AvoidStarImport"/>
+    <module name="IllegalImport"/>
+    <module name="NeedBraces"/>
+  </module>
+    <module name="FileLength"/>
+    <module name="FileTabCharacter"/>
     <module name="Header">
-        <property name="header" value="////////////////////////////////////////////////////////////////////\n// [Andrea] [Polo-Perucchin] [1169765]\n////////////////////////////////////////////////////////////////////"/>
+      <property name="header" value="////////////////////////////////////////////////////////////////////\n// [Andrea] [Polo-Perucchin] [1169765]\n////////////////////////////////////////////////////////////////////"/>
     </module>
 </module>
 

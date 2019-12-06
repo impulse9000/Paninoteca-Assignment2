@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="6.11.2">
-<file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\App.java">
-</file>
 <file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\business\exception\TakeAwayBillException.java">
 </file>
 <file name="C:\Users\andre\Desktop\TOS\Paninoteca-Assignment2\sandwich-shop-manager\src\main\java\it\unipd\tos\business\TakeAwayBill.java">
