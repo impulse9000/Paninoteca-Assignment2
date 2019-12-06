@@ -9,3 +9,5 @@ cache:
 script:
   - cd sandwich-shop-manager
   - mvn clean install
+after_success:
+  - mvn clean test jacoco:report coveralls:report
