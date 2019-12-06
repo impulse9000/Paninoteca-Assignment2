@@ -19,10 +19,6 @@ public class MenuItem {
         this.price = price;
     }
 
-    public String toString() {
-        return "Tipo: " + this.type + "Nome: " + this.name + "Prezzo: " + this.price;
-    }
-
     public double getPrice() {
         return this.price;
     }

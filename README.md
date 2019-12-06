@@ -1,2 +1,2 @@
 [![Build Status](https://travis-ci.com/impulse9000/Paninoteca-Assignment2.svg?branch=master)](https://travis-ci.com/impulse9000/Paninoteca-Assignment2)
-[![Coverage Status](https://coveralls.io/repos/github/impulse9000/Paninoteca-Assignment2/badge.svg?branch=master)](https://coveralls.io/github/impulse9000/Paninoteca-Assignment2?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/impulse9000/Paninoteca-Assignment2/badge.svg?branch=commissione50cent)](https://coveralls.io/github/impulse9000/Paninoteca-Assignment2?branch=commissione50cent)
