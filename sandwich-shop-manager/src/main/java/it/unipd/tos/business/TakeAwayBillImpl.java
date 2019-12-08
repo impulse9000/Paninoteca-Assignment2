@@ -54,10 +54,8 @@ public class TakeAwayBillImpl implements TakeAwayBill {
         return 0;
     }
 
-    // 10% di sconto se il totale dell'ordine supera i 50 euro (contando solo panini
-    // e fritti)
+    // 10% di sconto se il totale dell'ordine supera i 50 euro (contando solo panini e fritti)
     // ritorna risparmio in euro oppure 0 se non applicabile
-
     public double get10Discount(List<MenuItem> itemsOrdered, double totalOrderPrice) {
         if (totalOrderPrice > 50) {
             double totalFilteredPrice = 0;
@@ -95,6 +93,8 @@ public class TakeAwayBillImpl implements TakeAwayBill {
         }
     }
 
+    // vede se deve essere applicata una commissione all'ordine
+    // ritorna la commissione o 0 altrimenti
     public double checkForCommission(double totalOrderPrice) {
         if (totalOrderPrice < 10) {
             return 0.50;
